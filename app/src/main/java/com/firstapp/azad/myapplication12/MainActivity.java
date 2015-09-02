@@ -33,6 +33,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         Button equalButton = (Button) findViewById(R.id.equal);
         Button ceButton= (Button) findViewById(R.id.ce);
         Button eraseButton =(Button) findViewById(R.id.erase);
+        Button dotButton = (Button) findViewById(R.id.dot);
 
         oneButton.setOnClickListener(this);
         twoButton.setOnClickListener(this);
@@ -48,9 +49,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
         equalButton.setOnClickListener(this);
         ceButton.setOnClickListener(this);
         eraseButton.setOnClickListener(this);
+        dotButton.setOnClickListener(this);
 
     }
-    public String removeLastChar(String s){return (s != null && s.length() != 0) ? s.substring(0, s.length()-1): s;}
+
 
     @Override
     public void onClick(View v) {
@@ -96,15 +98,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 displayText=displayText+"0";
                 display.setText(displayText);
                 break;
+            case R.id.dot:
+                displayText = displayText + ".";
+                display.setText(displayText);
+                break;
             case R.id.plus:
                 displayText=displayText+"+";
                 display.setText(displayText);
                 break;
             case R.id.equal:
                 String[] numbers=displayText.split("\\+");
-                int sum=0;
+                double sum = 0;
                 for(int i=0;i<numbers.length;i++){
-                    int num=Integer.parseInt(numbers[i]);
+                    double num = Double.parseDouble(numbers[i]);
                     sum=sum+num;
                     display.setText(sum+"");
                 }
@@ -115,7 +121,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 if(displayText.length()>0)
                 {
                     String x =str.substring(0, str.length() - 1);
-                    display.setText(x);
+                    displayText = x;
+                    display.setText(displayText);
 
                 }
 

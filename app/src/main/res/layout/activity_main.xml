@@ -20,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
+            style="@style/AppTheme"
             android:id="@+id/seven"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -135,12 +136,20 @@
             android:layout_weight="1"
             android:textSize="40sp"/>
         <Button
-            android:id="@+id/erase"
+            android:id="@+id/dot"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="X"
+            android:text="."
             android:layout_weight="1"
             android:textSize="40sp"/>
+
+        <Button
+            android:id="@+id/erase"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="X"
+            android:textSize="40sp"
+            android:layout_weight="1" />
 
 
 
